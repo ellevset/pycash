@@ -1,0 +1,2 @@
+# pycash
+Python gnucash coupling
