@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-from pygnu.guessaccount import guess
+from pycash.guessaccount import guess
 
 _fullname = 'Liabilities:Credit Card:SAS Eurocard'
 
