@@ -1,6 +1,6 @@
 
 import sys
-from pygnu.core.management import run_from_cmd_line
+from pycash.core.management import run_from_cmd_line
 
 def main(argv):
     run_from_cmd_line(argv)

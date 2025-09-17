@@ -1,8 +1,11 @@
 
+import logging
+
 import pandas as pd
 
-from pygnu.guessaccount import guess
+from pycash.guessaccount import guess
 
+logger = logging.getLogger(__name__)
 
 _fullname = 'Liabilities:Credit Card:SAS Eurocard'
 
@@ -17,7 +20,8 @@ def read(fp):
 
     # Read the sheet
     #df = pd.read_excel(fp, skiprows=16)
-    df = pd.read_excel(fp)
+    logger.info(f"Reading file {fp}")
+    df = pd.read_excel(fp, engine='xlrd')
 
     idx = df.index[df['Fakturadetaljer'].str.contains(r'Kjøp/uttak', na=False)]
     idx = idx[0] + 2

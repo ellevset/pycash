@@ -10,7 +10,10 @@ import piecash
 from piecash import open_book
 
 # Path to the gnucash-book
-fp = '/home/ellevset/Dropbox/Documents/Gnucash/working/working.gnucash'
+# TODO find a smarter way
+# fp = '/home/ellevset/Dropbox/Documents/Gnucash/working/working.gnucash'
+fp = '/Users/ellevset/Dropbox/Documents/Gnucash/working/working.gnucash'
+
 
 def guess(account, description):
 

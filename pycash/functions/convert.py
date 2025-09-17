@@ -6,7 +6,9 @@ Script to convert
 
 import sys
 import importlib
+import logging
 
+logger = logging.getLogger(__name__)
 
 def main(*args, **kwargs):
     ###print kwargs
@@ -18,8 +20,12 @@ def main(*args, **kwargs):
     #df.to_csv(fp.replace('xlsx', 'csv'),
     #          index=False)
 
-    m = importlib.import_module('pygnu.account.%s' % kwargs['model'])
+    m = importlib.import_module('pycash.account.%s' % kwargs['model'])
+    logger.info(f"Account {m}")
     df, fp = m.read(kwargs['fp'])
+
+    # Writing out
+    logger.info(f'Writing to {fp}')
     df.to_csv(fp,
               index=False,
               encoding='utf-8')
